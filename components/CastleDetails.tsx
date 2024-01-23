@@ -1,9 +1,11 @@
 "use client";
+
 import { ListingProps } from '@/types';
 import React from 'react'
 import Image from 'next/image';
 import { Fragment } from 'react';
 import { Dialog, Tab, Transition } from '@headlessui/react';
+// @ts-ignore
 import useSound from 'use-sound';
 
 import Hover from './Hover';
