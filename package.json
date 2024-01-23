@@ -16,7 +16,8 @@
     "react-dom": "^18",
     "react-router-dom": "^6.21.3",
     "react-tilt": "^1.0.2",
-    "swiper": "^11.0.5"
+    "swiper": "^11.0.5",
+    "use-sound": "^4.0.1"
   },
   "devDependencies": {
     "@types/node": "^20",

@@ -29,7 +29,7 @@ const Hero = ({castle}: CastleCardProps) => {
           
            
             <CustomButton 
-            title="Click me!"
+            title="Featured"
             containerStyles="bg-primary text-white rounded-full mt-10"
             handleClick={() => setIsOpen(true)}
          

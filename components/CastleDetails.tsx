@@ -4,6 +4,9 @@ import React from 'react'
 import Image from 'next/image';
 import { Fragment } from 'react';
 import { Dialog, Tab, Transition } from '@headlessui/react';
+import useSound from 'use-sound';
+
+import Hover from './Hover';
 
 
 interface CastleDetailsProps{
@@ -12,6 +15,7 @@ interface CastleDetailsProps{
     castle: ListingProps;
 }
 const CastleDetails = ({isOpen, closeModal, castle} : CastleDetailsProps) => {
+  const [play, {stop}] = useSound('/macbeth.mp3');
   return (
   <>
     <Transition appear show={isOpen} as={Fragment}>
@@ -35,18 +39,20 @@ const CastleDetails = ({isOpen, closeModal, castle} : CastleDetailsProps) => {
             leaveFrom='opacity-100 scale-100'
             leaveTo='opacity-0 scale-95'>
                 <Dialog.Panel>
-                  <button
-                  type='button'
-                  onClick={closeModal}>
-                        <Image
-                    src='/close.svg'
-                    alt='close'
-                    width={20}
-                    height={20}
-                    className='object-contain'
-                  />
+              
+                  <button onClick={() => play()} onDoubleClick={() => stop()}>
+      <span role="img" aria-label="trumpet">
+      <Hover
+            title="Hover"
+            containerStyles="bg-primary text-white rounded-full mt-10"
+            
+         
+            />
+           
+             
+      </span>
+    </button>
 
-                  </button>
                   <Tab.Group>
       <Tab.List>
       <Tab as={Fragment}>
@@ -76,7 +82,7 @@ const CastleDetails = ({isOpen, closeModal, castle} : CastleDetailsProps) => {
       </Tab.List>
       <Tab.Panels>
         <Tab.Panel><div className='relative mb-[100px] w-[600px] h-[568px]'>
-   <Image src="/ione.png" alt="Iverness One" fill priority className=' object-contain'/>
+   <Image src="/isix.png" alt="Iverness One" fill priority className=' object-contain'/>
 </div></Tab.Panel>
         <Tab.Panel><div className='relative mb-[100px] w-[600px] h-[568px]'>
    <Image src="/ithree.png" alt="Iverness Two" fill priority className='object-contain'/>
@@ -87,7 +93,18 @@ const CastleDetails = ({isOpen, closeModal, castle} : CastleDetailsProps) => {
       </Tab.Panels>
     </Tab.Group>
            
+    <button
+                  type='button'
+                  onClick={closeModal}>
+                        <Image
+                    src='/close.svg'
+                    alt='close'
+                    width={20}
+                    height={20}
+                    className='object-contain'
+                  />
 
+                  </button>
              
                 </Dialog.Panel>
                 </Transition.Child>

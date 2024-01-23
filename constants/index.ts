@@ -4,8 +4,8 @@ export const manufacturers = [
   "Siward",
   "Donalbain",
   "Malcom",
-  "Ten Thousand Soldiers"
-  ];
+  "Ten Thousand Soldiers",
+    ];
 
   
   export const listings: ListingProps[] = [
