@@ -11,6 +11,7 @@ import CastleDetails from './CastleDetails';
 
 interface CastleCardProps {
   castle: ListingProps;
+  
 }
 
 const CastleCard = ({castle}: CastleCardProps) => {

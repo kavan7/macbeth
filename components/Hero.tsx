@@ -12,12 +12,14 @@ import React, { ButtonHTMLAttributes } from 'react';
 
 interface CastleCardProps {
   castle: ListingProps;
+  
 }
 
 
 
-const Hero = ({castle}: CastleCardProps) => {
+const Hero = () => {
   const [isOpen, setIsOpen] = useState(false);
+
   
   return (
     <div className="hero">
@@ -89,7 +91,7 @@ const Hero = ({castle}: CastleCardProps) => {
           
         </div>
    
-        <CastleDetails isOpen={isOpen} closeModal={() => setIsOpen(false)} castle={castle}/>
+        <CastleDetails isOpen={isOpen} closeModal={() => setIsOpen(false)} />
     </div>
   )
 }

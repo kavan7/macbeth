@@ -12,9 +12,9 @@ import Hover from './Hover';
 interface CastleDetailsProps{
     isOpen: boolean;
     closeModal: () => void;
-    castle: ListingProps;
+    
 }
-const CastleDetails = ({isOpen, closeModal, castle} : CastleDetailsProps) => {
+const CastleDetails = ({isOpen, closeModal} : CastleDetailsProps) => {
   const [play, {stop}] = useSound('/macbeth.mp3');
   return (
   <>
